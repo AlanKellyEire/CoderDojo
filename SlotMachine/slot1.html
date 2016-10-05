@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Slots</title>
+
+<script type="text/javascript">
+	function spin() {
+		var random1 = Math.floor((Math.random() * 3));
+
+		var spinslot1 = new Image();
+
+		if (random1 == 0) {
+			spinslot1.src = "bar.jpg";
+		} else if (random1 == 1) {
+			spinslot1.src = "cherry.jpg";
+		} else if (random1 == 2) {
+			spinslot1.src = "lemon.jpg";
+		} else if (random1 == 3) {
+			spinslot1.src = "pear.jpg";
+		}
+
+		document.slot1.src = spinslot1.src;
+
+		var random2 = Math.floor((Math.random() * 3));
+		var spinslot2 = new Image();
+
+		if (random2 == 0) {
+			spinslot2.src = "bar.jpg";
+		} else if (random2 == 1) {
+			spinslot2.src = "cherry.jpg";
+		} else if (random2 == 2) {
+			spinslot2.src = "lemon.jpg";
+		} else if (random2 == 3) {
+			spinslot2.src = "pear.jpg";
+		}
+
+		document.slot2.src = spinslot2.src;
+
+		var random3 = Math.floor((Math.random() * 3));
+		var spinslot3 = new Image();
+
+		if (random3 == 0) {
+			spinslot3.src = "bar.jpg";
+		} else if (random3 == 1) {
+			spinslot3.src = "cherry.jpg";
+		} else if (random3 == 2) {
+			spinslot3.src = "lemon.jpg";
+		} else if (random3 == 3) {
+			spinslot3.src = "pear.jpg";
+		}
+
+		document.slot3.src = spinslot3.src;
+
+		if ((random1 == random2) && (random2 == random3)) {
+			document.getElementById("sometext").innerHTML = "Yippee!";
+		} else {
+			document.getElementById("sometext").innerHTML = "Sorry. You lose!";
+		}
+
+	}
+</script>
+
+</head>
+
+<body>
+
+	<img src="pear.jpg" name="slot1" width="100" height="115" alt="slot" />
+	<img src="cherry.jpg" name="slot2" width="100" height="115" alt="slot" />
+	<img src="lemon.jpg" name="slot3" width="100" height="115" alt="slot" />
+
+	<br />
+	<br />
+	<br />
+	<br />
+	<button type="button" onclick="spin()">Pull</button>
+	<div id="sometext">good luck</div>
+
+</body>
+</html>
